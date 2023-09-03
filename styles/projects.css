@@ -1,0 +1,54 @@
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+}
+
+.resumesection {
+  height: auto;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  /* background: linear-gradient(to bottom, #6b3ca6, #9b59b6); */
+  background-image: radial-gradient(rgba(9, 9, 9, 0.2) 20%, transparent 20%);
+  background-size: 20px 20px; /* Adjust the size of the dots */
+  background-position: 0 0; /* Adjust the starting position */
+  animation: moveBackground 100s linear infinite;
+  transition: background-color 0.5s ease-in-out;
+}
+
+@keyframes moveBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+.ResumeImage {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  background: transparent;
+}
+
+.ResumeImage {
+  position: relative;
+  display: inline-block;
+}
+
+.gradient-purple {
+  background: linear-gradient(#0a024d, #5d0688);
+}
+
+.gradient-yellow {
+  background: linear-gradient(#5d0688, #d4b20c);
+}

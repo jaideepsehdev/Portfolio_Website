@@ -1,0 +1,74 @@
+/* Container for the entire navbar */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: transparent;
+  /* backdrop-filter: blur(10px); */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* z-index: 100; */
+}
+
+/* Logo */
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #070707;
+}
+
+.centerlogo {
+  display: flex;
+  margin-left: 55rem;
+}
+
+/* Navigation Links */
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin-right: 3rem;
+  font-size: 1.7rem;
+}
+.navbar-links li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.navbar-links li a:hover {
+  color: #333;
+}
+
+/* Add this CSS to your existing CSS file */
+.navbar-links li a.active {
+  border-bottom: 2px solid yellow;
+  /* Add any other styles for active links here */
+}
+
+@media (max-width: 768px) {
+  .centerlogo {
+    margin-left: 1rem; /* Adjust as needed for centering */
+  }
+
+  /* Adjust styles for smaller screens */
+  .navbar-logo {
+    font-size: 1.2rem;
+  }
+
+  .navbar-links {
+    font-size: 1rem;
+    flex-direction: row; /* Stack links vertically */
+    align-items: center; /* Center align links */
+  }
+
+  .navbar-links li {
+    margin-right: 0; /* Remove right margin for stacked links */
+    margin-bottom: 0.5rem; /* Add spacing between stacked links */
+  }
+}

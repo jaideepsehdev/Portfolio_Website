@@ -1,0 +1,144 @@
+.mainhomesection {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-image: linear-gradient(to bottom, #0a024d, #040018);
+}
+.dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    rgba(237, 227, 227, 0.2) 20%,
+    transparent 20%
+  );
+  background-size: 10px 10px;
+  animation: moveBackground 100s linear infinite;
+  transition: background-color 0.5s ease-in-out;
+}
+
+/*animations*/
+@keyframes moveBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+/* SVG  small lines css styling*/
+.line {
+  position: absolute;
+  width: 100%;
+  height: 1px; /* Adjust the line thickness as needed */
+  /* background-color: #000; */
+}
+
+.line1 {
+  top: 20%;
+  transform: rotate(-10deg);
+  background-color: orange;
+}
+
+.line2 {
+  top: 40%;
+  transform: rotate(5deg);
+  background-color: whitesmoke;
+}
+
+.line3 {
+  top: 60%;
+  transform: rotate(-15deg);
+  background-color: pink;
+}
+
+.line4 {
+  top: 60%;
+  transform: rotate(9deg);
+  background-color: red;
+}
+
+.line5 {
+  top: 80%;
+  transform: rotate(-15deg);
+  background-color: rgb(138, 187, 47);
+}
+
+.line6 {
+  top: 80%;
+  transform: rotate(9deg);
+  background-color: rgb(236, 236, 41);
+}
+
+.line7 {
+  top: 20%;
+  transform: rotate(9deg);
+  background-color: rgb(39, 172, 209);
+}
+
+/* typing animation */
+.first-text {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #fbfbfb;
+  font-size: 70px;
+  font-weight: 600;
+  font-family: "Bungee";
+}
+
+.first-text span {
+  color: #ff5733; /* Set a different color for the span element */
+}
+
+.first {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+}
+
+@media (max-width: 768px) {
+  .first-text {
+    font-size: 55px; /* Adjust font size for smaller screens */
+  }
+
+  .first {
+    top: 20%; /* Adjust the position from the top for smaller screens */
+    left: 10%; /* Adjust the position from the left for smaller screens */
+  }
+}
+
+/* Name */
+
+.Name {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #1cbcca;
+  font-size: 90px;
+  font-weight: 600;
+  font-family: "Bungee2";
+  top: 5%;
+  left: 25%;
+}
+
+@media (max-width: 768px) {
+  .Name {
+    font-size: 50px; /* Adjust font size for smaller screens */
+    top: 10%; /* Adjust the position from the top for smaller screens */
+    left: 5%; /* Adjust the position from the left for smaller screens */
+  }
+}
+
+@font-face {
+  font-family: "Yatra";
+  src: url("/YatraOne-Regular.ttf") format("truetype"); /* Adjust the path and format as needed */
+}
+
+@font-face {
+  font-family: "Bungee2";
+  src: url("/Bungee2.ttf") format("truetype"); /* Adjust the path and format as needed */
+}
