@@ -1,0 +1,8 @@
+.projectContainer {
+  background-color: #4834d4;
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  transition: background-color 0.5s;
+  z-index: 2;
+}

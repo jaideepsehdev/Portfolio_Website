@@ -12,7 +12,7 @@ const ResumeDownload = () => {
         className="download-link"
       >
         <FontAwesomeIcon icon={faFileDownload} className="download-icon" />
-        Download Resume
+        Resume
       </a>
     </div>
   );

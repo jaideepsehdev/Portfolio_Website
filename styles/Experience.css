@@ -1,0 +1,112 @@
+.mainhomesection {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-image:black;
+}
+
+
+.experience-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  height: 100vh;
+}
+
+.experience-item {
+  width: 45%;
+  padding: 20px;
+  color : white;
+  border: 3px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Brawler';
+ 
+}
+
+.experience-item h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.experience-item h2{
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.experience-item li {
+  list-style-type: '-';
+  line-height: 1.5;
+}
+
+.experience-item p {
+  font-size: 1em;
+}
+
+.tab { 
+  display: inline-block; 
+  margin-left: 30%; 
+} 
+
+/* PDF button */
+
+.pdf-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #110a61; 
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.pdf-button:hover {
+  background-color: #2980b9; /* Choose your preferred hover color */
+}
+
+/* media queries */
+
+@media only screen and (max-width: 768px) {
+
+  .experience-container {
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 30%;
+    margin-bottom: 15%;
+    height: 150vh;
+    width: 80%;
+  }
+  
+
+  .experience-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .experience-item h1 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .experience-item h2{
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  
+  .experience-item li {
+    list-style-type: '-';
+    line-height: 1.5;
+    font-size: 12px;
+
+  }
+
+  .experience-item p {
+    font-size: 12px;
+  }
+  
+  .tab {
+    margin-left: 20%;
+  }
+}
+

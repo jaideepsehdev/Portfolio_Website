@@ -1,41 +1,9 @@
-.welcometext {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1; /*Ensure the text is above the image */
-  color: white; /* Adjust the text color as needed */
-  text-align: center;
-  font-size: 2rem; /* Adjust the font size as needed */
-}
-
 body {
-  scroll-behavior: smooth; /* Enable smooth scrolling behavior */
-  background: linear-gradient(to bottom, #040018, #0a024d);
-}
+  scroll-behavior: smooth;
+  background: black;
+  margin: 0;
+  padding: 0;
 
-.text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white; /* Adjust the text color as needed */
-  text-align: center;
-  font-size: 2rem; /* Adjust the font size as needed */
-}
-
-.myimage {
-  position: absolute;
-  top: 11%;
-  left: 2%;
-  background: transparent;
-}
-
-.sfuimage {
-  position: absolute;
-  top: 10%;
-  left: 75%;
-  background: transparent;
 }
 
 .Navbar {
@@ -47,52 +15,13 @@ body {
 
 .homesection {
   height: 100vh;
-  overflow: hidden;
-  position: relative;
-
-  background-image: radial-gradient(
-    rgba(237, 227, 227, 0.2) 20%,
-    transparent 20%
-  );
-  background-size: 10px 10px; /* Adjust the size of the dots */
-  background-position: 0 0; /* Adjust the starting position */
-  animation: moveBackground 100s linear infinite;
-  transition: background-color 0.5s ease-in-out;
-}
-
-/*animations*/
-@keyframes moveBackground {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 100% 100%;
-  }
-}
-
-.first-text {
-  position: relative;
-  display: flex;
-  align-items: center;
-  color: #fbfbfb;
-  font-size: 70px;
-  font-weight: 600;
-  font-family: "Bungee";
-}
-
-.first-text span {
-  color: #ff5733; /* Set a different color for the span element */
-}
-
-.first {
-  position: absolute;
-  top: 10%;
-  left: 30%;
+  width: 90vh;
 }
 
 .About {
   position: relative;
   left: 30vw;
+  top : -10%;
   color: #ff5733;
   font-size: 70px;
   font-family: "Bungee";
@@ -101,12 +30,12 @@ body {
 /* Add a media query for smaller screens */
 @media (max-width: 768px) {
   .first-text {
-    font-size: 40px; /* Adjust the font size for smaller screens */
+    font-size: 40px; 
   }
 
   .first {
-    top: 5%; /* Adjust the positioning for smaller screens */
-    left: 20%; /* Adjust the positioning for smaller screens */
+    top: 5%; 
+    left: 20%; 
   }
 
   .About {
@@ -115,41 +44,6 @@ body {
     font-size: 40px;
   }
 }
-
-.left-box {
-  width: 500px; /* Adjust the width as needed */
-  height: 60vh; /* Adjust the height as needed */
-  background-color: black; /* Set the background color */
-  color: white;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.skills {
-  margin-top: 40vh;
-}
-
-.skills-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex; /* Use flexbox for horizontal layout */
-  flex-wrap: wrap; /* Allow wrapping to next line when needed */
-  gap: 10px; /* Add some spacing between list items */
-}
-
-.skills-list li {
-  margin-bottom: 10px;
-  font-size: 18px;
-  font-weight: bold;
-  border-left: 2px solid #ff5733;
-  padding-left: 10px;
-  white-space: nowrap; /* Prevent text from wrapping within an item */
-  display: flex; /* Align bullet symbol with text */
-  align-items: center;
-  font-family: sans-serif;
-}
-/* icons  */
 
 /* fonts */
 @font-face {
@@ -166,8 +60,12 @@ body {
 .floating-image-container {
   width: 20vw;
   height: 40vh;
-  top: -50%;
+  top: -70%;
   position: relative;
+
+  box-shadow: 10px 10px 50px rgba(109, 82, 82, 0.5);
+
+  
 }
 
 .floating-image-container .image {
@@ -175,18 +73,18 @@ body {
   height: 100%;
   position: relative !important;
   object-fit: cover;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); /* Add shadow for the floating effect */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); 
   transition: transform 1s ease-in-out;
 }
 
 .floating-image-container:hover {
-  transform: translateY(-10px); /* Move the image slightly upwards on hover */
+  transform: translateY(-10px); 
 }
 
 /* Add a media query for smaller screens */
 @media (max-width: 768px) {
   .floating-image-container {
-    max-width: 100%; /* Make the container width 100% for smaller screens */
+    max-width: 100%; 
     top: -40%;
     width: 25%;
     height: 30%;
@@ -200,12 +98,12 @@ body {
 /* marqueeee */
 
 .marquee-container {
-  position: relative;
+  position: absolute;
   display: flex;
   overflow: hidden;
   width: 100%;
   height: 5%; /* Adjust the height as needed */
-  top: 25%;
+  top: 85%;
   background-color: rgb(14, 15, 15);
   margin-bottom: 20px;
   border: 2px solid white;
@@ -214,8 +112,7 @@ body {
 .marquee-stationary {
   display: flex;
   align-items: center;
-  padding-left: 1%; /* Adjust the padding as needed */
-  background-color: transparent; /* Adjust the color as needed */
+  padding-left: 1%; 
   color: white;
   font-size: 120%;
   font-family: "PP Rader";
@@ -237,9 +134,9 @@ body {
 
 @media (max-width: 768px) {
   .marquee-container {
-    height: 3%; /* Adjust the height for smaller screens */
-    top: 55%; /* Adjust the top position for smaller screens */
-    margin-bottom: 10px; /* Adjust margin for smaller screens */
+    height: 4%; 
+    top: 90%; 
+    margin-bottom: 10px; 
   }
 
   .marquee-stationary {
@@ -256,46 +153,12 @@ body {
   }
 }
 
-.marquee2 {
+.marquee2 {  
   width: 100%;
   margin-top: 0%;
   font-size: 120%;
-  background-color: transparent; /* Adjust the color for marquee2 */
+  background-color: transparent; 
   color: white;
   font-family: "PP Rader";
 }
-/* ***************************************************************************************************************************** */
-/* SVG  small lines css styling*/
 
-.intersecting-marquees {
-  position: relative;
-  width: 100%;
-  margin-top: 10%;
-}
-
-.marquee-line1,
-.marquee-line2 {
-  stroke-width: 2; /* Adjust the stroke width */
-  stroke: rgba(255, 0, 0, 0.5); /* Adjust the color */
-  animation-duration: 10s; /* Adjust the duration as needed */
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-@keyframes marquee {
-  0% {
-    stroke-dashoffset: 100%;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
-
-.marquee-line1 {
-  animation: marquee 10s linear infinite;
-}
-
-.marquee-line2 {
-  animation: marquee 10s linear infinite;
-  animation-delay: -5s; /* Delay the animation for the second line */
-}
