@@ -59,10 +59,10 @@ const Footer = () => {
           className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-24"
         >
           <a
-            href="mailto:jsa361@sfu.ca"
+            href="mailto:jaideepsehdev68@gmail.com"
             className="font-mono text-sm text-[#00d4aa] border border-[#00d4aa]/30 px-6 py-3 rounded hover:bg-[#00d4aa]/10 transition-colors tracking-wider"
           >
-            jsa361@sfu.ca ↗
+            jaideepsehdev68@gmail.com ↗
           </a>
 
           <div className="flex items-center gap-5">

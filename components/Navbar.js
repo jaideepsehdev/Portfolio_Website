@@ -8,8 +8,7 @@ const NAV_LINKS = [
   { label: "contact", to: "contact" },
 ];
 
-const RESUME_URL =
-  "https://drive.google.com/file/d/1La4Mn0fCtS9j4lPKEVZbxjXYGCFrz5jd/view?usp=sharing";
+const RESUME_URL = "/Software_Jaideep_Singh.pdf";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
