@@ -1,40 +1,45 @@
 import React from "react";
-import styles from "../styles/home.css";
-import Navbar from "../components/Navbar.js";
-import About from "../components/About.js";
-import Projects from "../components/projects.js";
-import Home from "../components/home.js";
-import MainHome from "../components/mainhome.js";
-import Image from "next/image";
-
+import Head from "next/head";
 import { Element } from "react-scroll";
+import Navbar from "../components/Navbar.js";
+import MainHome from "../components/mainhome.js";
+import Home from "../components/home.js";
+import Experience from "../components/Experience.js";
+import Projects from "../components/projects.js";
+import Footer from "../components/contact.js";
 
 const Homepage = () => {
   return (
-    <div
-      style={{
-        position: "relative",
-        width: "100vw",
-        height: "100vh",
-      }}
-    >
-      <div className="Navbar">
-        <Navbar />
-      </div>
+    <>
+      <Head>
+        <title>Jaideep Singh | Software Developer</title>
+        <meta
+          name="description"
+          content="Portfolio of Jaideep Singh — software developer, IT ops engineer, and CS grad from Simon Fraser University. Based in Vancouver."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
 
-      <Element name="mainhome">
-        <MainHome />
-      </Element>
-      <Element name="home">
-        <Home />
-      </Element>
+      <Navbar />
 
-      <Element name="Projects">
-        <Projects />
-      </Element>
-
-      {/* <About /> */}
-    </div>
+      <main>
+        <Element name="mainhome">
+          <MainHome />
+        </Element>
+        <Element name="home">
+          <Home />
+        </Element>
+        <Element name="work">
+          <Experience />
+        </Element>
+        <Element name="Projects">
+          <Projects />
+        </Element>
+        <Element name="contact">
+          <Footer />
+        </Element>
+      </main>
+    </>
   );
 };
 

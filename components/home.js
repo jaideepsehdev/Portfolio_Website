@@ -1,89 +1,150 @@
-import React from "react";
-import styles from "../styles/home.css";
+import React, { useRef } from "react";
 import Image from "next/image";
-import { useTypewriter, Cursor } from "react-simple-typewriter";
-import Iconbar from "../components/iconbar.js";
-import ResumeDownload from "../components/download.js";
-import about from "../styles/About.css";
-import ContactButton from "../components/contact.js";
+import { motion, useInView } from "framer-motion";
+
+const SKILLS = [
+  "Python",
+  "JavaScript",
+  "React",
+  "Next.js",
+  "C",
+  "C++",
+  "MySQL",
+  "REST APIs",
+  "Git",
+  "Jenkins",
+  "Bash",
+  "Linux",
+  "Okta",
+  "Jira",
+  "HTML / CSS",
+  "Node.js",
+];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.04, delayChildren: 0.1 },
+  },
+};
+
+const tagVariants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
+};
 
 const Home = () => {
-  const [text] = useTypewriter({
-    words: ["Jaideep", "a Student"],
-    loop: {},
-  });
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="home" className="homesection">
-      <Iconbar />
-      {/* <ResumeDownload /> */}
+    <section
+      ref={ref}
+      id="home"
+      className="relative bg-[#080808] py-32 px-6 border-t border-[#1f1f1f]"
+    >
+      <div className="max-w-6xl mx-auto">
+        {/* Section label */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.5 }}
+          className="font-mono text-xs text-[#00d4aa] tracking-[0.3em] uppercase mb-20"
+        >
+          01 / about
+        </motion.p>
 
-      {/* <div className="first">
-        <h1 className="first-text">
-          {" "}
-          I am
-          <span> {text}</span>
-          <Cursor />
-        </h1>
-      </div> */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+          {/* Left: photo + bio */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col gap-8"
+          >
+            <div className="flex items-center gap-6">
+              <div className="relative w-20 h-20 rounded-full overflow-hidden border border-[#1f1f1f] ring-2 ring-offset-2 ring-offset-[#080808] ring-[#00d4aa]/25 shrink-0">
+                <Image
+                  src="/jaideep_image.jpg"
+                  fill
+                  className="object-cover"
+                  alt="Jaideep Singh"
+                />
+              </div>
+              <div>
+                <h2 className="text-xl font-semibold text-[#ededed] tracking-tight">
+                  Jaideep Singh
+                </h2>
+                <p className="font-mono text-xs text-[#888] mt-1">
+                  Vancouver, Canada
+                </p>
+              </div>
+            </div>
 
-      <div className="About">
-        <h1>About</h1>
-      </div>
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold text-[#ededed] tracking-tight leading-tight">
+                Building things that<br />
+                <span className="text-[#00d4aa]">actually work.</span>
+              </h2>
+              <p className="text-[#888] leading-relaxed text-sm">
+                I&apos;m a recent Computer Science graduate from Simon Fraser
+                University. I build full-stack applications, automation
+                pipelines, and AI-assisted tools that solve practical problems
+                for real users.
+              </p>
+              <p className="text-[#888] leading-relaxed text-sm">
+                My recent work spans Python and Jenkins automation at Hootsuite,
+                internal tools connecting Slack, Jira, Confluence, and identity
+                platforms through APIs, and a full-stack French language
+                learning platform with speech-to-text, text-to-speech, and
+                LLM-powered feedback.
+              </p>
+            </div>
 
-      <div className="marquee-container">
-        <div className="marquee-stationary">
-          <span className="marquee-content">Skills:</span>
-          <div className="marquee marquee2">
-            <span className="marquee-content">Python</span>
-            <span className="marquee-content"> C</span>
-            <span className="marquee-content">C++</span>
-            <span className="marquee-content"> JavaScript</span>
-            <span className="marquee-content"> MySQL</span>
-            <span className="marquee-content">HTML/CSS</span>
-            <span className="marquee-content"> MATLAB</span>
-            <span className="marquee-content"> Git</span>
-            <span className="marquee-content"> React</span>
-            <span className="marquee-content">Numpy</span>
-            <span className="marquee-content"> Pygame</span>
+            <div className="flex items-center gap-3">
+              <div className="w-2 h-2 rounded-full bg-[#00d4aa] animate-pulse" />
+              <span className="font-mono text-xs text-[#888]">
+                open to new opportunities
+              </span>
+            </div>
+          </motion.div>
+
+          {/* Right: skills */}
+          <div>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 1 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="font-mono text-xs text-[#555] tracking-widest uppercase mb-6"
+            >
+              technologies &amp; tools
+            </motion.p>
+
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              className="flex flex-wrap gap-2"
+            >
+              {SKILLS.map((skill) => (
+                <motion.span
+                  key={skill}
+                  variants={tagVariants}
+                  whileHover={{
+                    borderColor: "#00d4aa55",
+                    color: "#00d4aa",
+                    transition: { duration: 0.15 },
+                  }}
+                  className="font-mono text-xs border border-[#1f1f1f] text-[#888] px-3 py-1.5 rounded cursor-default"
+                >
+                  {skill}
+                </motion.span>
+              ))}
+            </motion.div>
           </div>
         </div>
       </div>
-
-      <div className="floating-image-container">
-        <Image src="/jaideep_image.jpg" layout="fill" className="image" />
-      </div>
-
-      {/* <div className="intersecting-marquees">
-        <svg width="100%" height="100">
-          <line x1="0" y1="0" x2="100%" y2="100" className="marquee-line1" />
-          <line x1="0" y1="100" x2="100%" y2="0" className="marquee-line2" />
-        </svg>
-      </div> */}
-
-      <div className="about-heading">
-        <p>
-          {/* A third year computer science student at Simon Fraser University.
-          Software development and web development enthusiast. Always keen on
-          learning about and using new technology. Currently learning about
-          nodeJS, React and computer architecture. Made fun and impactful
-          projects like : Blackfoot Helper : This simple application made in
-          python helps people learn and hopefully revive the native language
-          called "Blackfoot" which is on the verge of extinction with only about
-          5000 speakers left. Pharmacy Database : A CRUD application made in C++
-          using object oriented programming and efficient searching algorithms
-          to manage a database of medicines with ease */}
-          HI, I am Jaideep Singh, I am a third year student at Simon Fraser University pursuing a bachelors 
-          degree in Computer Science. I am a software development and machine learning enthusiast. I am intrigued
-          by the usage of software in all aspects of innovation, therefore I show utmost interest not only in
-          software development for phone and computer applications but also in fields like Space Exploration, 
-          Robotics and Political Science. This has led me to also join SFU Satellite Club to work on the tracking 
-          technology for the High Altitude Balloon Project. I have also worked as a Research Assistant for a Political
-          Science master's student at SFU to delve into usage of Computer Science in Political Sentiment Analysis.
-          My current endeavor is working as a Research Assistant for Professor Lawrence Kim in Human Computer Interaction.  
-        </p>
-      </div>
-      
     </section>
   );
 };
